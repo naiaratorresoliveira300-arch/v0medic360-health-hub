@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const navigation = [
     { name: 'HOME', href: '#home' },
@@ -39,9 +41,9 @@ const Header = () => {
 
           {/* Login Button */}
           <div className="hidden md:flex">
-            <Button variant="outline" className="mr-3">
-              Área do Profissional
-            </Button>
+              <Button variant="outline" className="mr-3" onClick={() => navigate('/login')}>
+                Área do Profissional
+              </Button>
           </div>
 
           {/* Mobile menu button */}
@@ -70,7 +72,7 @@ const Header = () => {
                   {item.name}
                 </a>
               ))}
-              <Button variant="outline" className="mt-4 w-full">
+              <Button variant="outline" className="mt-4 w-full" onClick={() => navigate('/login')}>
                 Área do Profissional
               </Button>
             </nav>

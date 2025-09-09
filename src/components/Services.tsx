@@ -1,8 +1,10 @@
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Brain, Settings, Users, ArrowRight, CheckCircle } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Services = () => {
+  const navigate = useNavigate();
   const services = [
     {
       icon: Brain,
@@ -120,9 +122,10 @@ const Services = () => {
                 <Button 
                   size="lg" 
                   variant="outline" 
-                  className="border-white text-white hover:bg-white hover:text-primary transition-all duration-300"
+                  className="bg-primary hover:bg-primary-deep text-white shadow-glow transition-all duration-300"
+                  onClick={() => navigate('/login')}
                 >
-                  Cadastre-se
+                  Cadastrar-se
                 </Button>
               </div>
             </div>

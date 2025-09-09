@@ -4,6 +4,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Badge } from '@/components/ui/badge';
+import { useNavigate } from 'react-router-dom';
 import { 
   Phone, 
   Mail, 
@@ -16,6 +17,7 @@ import {
 } from 'lucide-react';
 
 const Contact = () => {
+  const navigate = useNavigate();
   return (
     <section id="contact" className="py-20 bg-background">
       <div className="container mx-auto px-6">
@@ -101,13 +103,14 @@ const Contact = () => {
                   <p className="text-white/90 text-sm">
                     Cadastre-se em nossa plataforma e faça parte do futuro da saúde.
                   </p>
-                  <Button 
-                    variant="outline" 
-                    size="sm"
-                    className="border-white text-white hover:bg-white hover:text-primary transition-all duration-300 w-full"
-                  >
-                    Cadastrar-se
-                  </Button>
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  className="border-white text-white hover:bg-white hover:text-primary transition-all duration-300 w-full"
+                  onClick={() => navigate('/login')}
+                >
+                  Cadastrar-se
+                </Button>
                 </div>
               </Card>
             </div>

@@ -1,8 +1,10 @@
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Heart, Shield, Zap } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import heroImage from '@/assets/hero-doctor.jpg';
 
 const Hero = () => {
+  const navigate = useNavigate();
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background with overlay */}
@@ -38,8 +40,9 @@ const Hero = () => {
               <Button 
                 size="lg" 
                 className="bg-primary hover:bg-primary-deep text-white shadow-glow transition-all duration-300 transform hover:scale-105"
+                onClick={() => navigate('/login')}
               >
-                Saiba mais
+                Acesse sua Área
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               <Button 
